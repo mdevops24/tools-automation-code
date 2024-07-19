@@ -2,7 +2,7 @@ name: Provision Tools Infra
 on: [push, workflow_dispatch]
 jobs:
   Provision:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest #self-hosted
     steps:
       - uses: actions/checkout@v4
-      - run: ls -ltr #terraform init
+      - run: terraform init
