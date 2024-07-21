@@ -35,3 +35,9 @@
 - name: Print token
   ansible.builtin.debug:
     msg: "{{ token }}"
+
+- name: Install libicu dependency
+  ansible.builtin.dnf:
+    name: libicu
+    state: latest
+
