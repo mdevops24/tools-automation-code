@@ -1,3 +1,4 @@
+#To Setup runner s/w on gitlab-runner instance
 # Following steps need to be run manually
 # sudo curl -L -o /etc/yum.repos.d/gh-cli.repo https://cli.github.com/packages/rpm/gh-cli.repo
 # sudo dnf install gh -y
