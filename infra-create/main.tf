@@ -17,14 +17,14 @@ resource "aws_security_group" "tool-sg" {
     to_port          = 0
     protocol         = "-1"
     cidr_blocks      = ["0.0.0.0/0"]
-  }
+  }  #for outside side traffic
 
   ingress {
     from_port        = 22
     to_port          = 22
     protocol         = "TCP"
     cidr_blocks      = ["0.0.0.0/0"]
-  }
+  }  #inside traffic
 
   tags = {
     Name = "${var.name}-sg"

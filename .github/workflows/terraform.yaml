@@ -4,5 +4,5 @@ jobs:
   Provision:
     runs-on: ubuntu-latest #self-hosted
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4 #get the code
       - run: terraform init
