@@ -3,9 +3,9 @@ variable "tools" {
 
       github-runner = {
           instance_type = "t2.micro"
-          policy_name = {
+          policy_name = [
             "AdministratorAccess"
-           }
+           ]
       }
     }
 }
