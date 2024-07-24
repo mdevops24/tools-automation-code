@@ -53,7 +53,7 @@
   args:
     chdir: /actions-runner
   become_user: grunner
-  when: runner_count.stdout == "0"
+  when: runner_count.stdout == "0"  #to rerun code again and again
 
 - name: Install Runner Service
   ansible.builtin.shell: ./svc.sh install grunner ;  ./svc.sh start
