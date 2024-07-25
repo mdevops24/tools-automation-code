@@ -8,11 +8,11 @@ variable "tools" {
            ]
       }
 
-      #vault = {
-      #    instance_type = "t2.micro"
-      #    policy_name = [
-      #           ]
-      #      }
+      vault = {
+          instance_type = "t2.micro"
+          policy_name = [
+                 ]
+            }
     }
 }
 
