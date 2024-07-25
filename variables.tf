@@ -7,5 +7,11 @@ variable "tools" {
             "AdministratorAccess"
            ]
       }
+
+      vault = {
+          instance_type = ""
+          policy_name = [
+                 ]
+            }
     }
 }
