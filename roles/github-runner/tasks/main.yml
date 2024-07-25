@@ -2,7 +2,7 @@
 # Following steps need to be run manually
 # sudo curl -L -o /etc/yum.repos.d/gh-cli.repo https://cli.github.com/packages/rpm/gh-cli.repo
 # sudo dnf install gh -y
-# gh auth login
+# gh auth login -s admin:org
 # gh auth refresh -h github.com -s admin:org
 
 - name: Setup Prompt
@@ -50,7 +50,7 @@
 
 - name: Get the runner status
   ansible.builtin.shell: |
-    gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /orgs/raghudevopsb80/actions/runners | jq '.runners[] | select(.name == "ec2") | .status' |xargs
+    gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /orgs/mdevops24/actions/runners | jq '.runners[] | select(.name == "ec2") | .status' |xargs
   register: runner_status
   become_user: ec2-user
 

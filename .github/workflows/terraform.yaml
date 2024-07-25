@@ -6,6 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4 #get the code
       - name: Terraform Init
-      - run: terraform init
-      - name: Terraform Aply
-      - run: terraform apply -auto-approve
+        run: terraform init
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
