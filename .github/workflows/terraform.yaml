@@ -1,8 +1,11 @@
 name: Provision Tools Infra
-on: [push, workflow_dispatch]
+on: [workflow_dispatch]
 jobs:
   Provision:
-    runs-on: ubuntu-latest #self-hosted
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4 #get the code
+      - name: Terraform Init
       - run: terraform init
+      - name: Terraform Aply
+      - run: terraform apply -auto-approve
