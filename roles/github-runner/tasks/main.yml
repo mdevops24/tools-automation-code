@@ -61,7 +61,7 @@
   become_user: grunner
   when: runner_count.stdout == "0" or runner_status.stdout == "offline"
 
-- name: Update Path file
+- name: Update Path file #S28at40min
   ansible.builtin.file:
     src: path
     dest: /actions-runner/.path
