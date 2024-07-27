@@ -21,19 +21,31 @@ resource "aws_security_group" "tool-sg" {
   name        = "${var.name}-sg"
   description = "${var.name}-sg"
 
+  #for outside side traffic
   egress {
     from_port        = 0
     to_port          = 0
     protocol         = "-1"
     cidr_blocks      = ["0.0.0.0/0"]
-  }  #for outside side traffic
+  }
 
+  #inside traffic
   ingress {
     from_port        = 22
     to_port          = 22
     protocol         = "TCP"
     cidr_blocks      = ["0.0.0.0/0"]
-  }  #inside traffic
+  }
+
+  dynamic "ingress" {
+     for_each = var.ports
+     content{
+        from_port   = ingress.value
+        to_port     = ingress.value
+        protocol    = "TCP"
+        description = ingress.key
+         }
+      }
 
   tags = {
     Name = "${var.name}-sg"

@@ -1,4 +1,4 @@
-name: Provision vault setip
+name: Provision vault setUp
 on: [workflow_dispatch]
 jobs:
   Provision:
