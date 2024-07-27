@@ -1,4 +1,4 @@
-name: Provision vault setUp `date`
+name: Provision vault setUp "date"
 on: [workflow_dispatch]
 jobs:
   Provision:
